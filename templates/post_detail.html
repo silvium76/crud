@@ -1,9 +1,14 @@
 <!--templates/post_detail.html-->
 {% extends "base.html" %}
- 
+{% load crispy_forms_tags %}
 {% block content %}
     <h4> {{ post.title }} </h4>
     <p> {{ post.body }} </p>
-    <p><a href="{% url 'post_edit' post.pk %}">Edit post</a></p>
-    <p><a href="{% url 'post_delete' post.pk %}">Delete post</a></p>
+    {% comment %} <p><a href="{% url 'post_edit' post.pk %}">Edit post</a></p>
+    <p><a href="{% url 'post_delete' post.pk %}">Delete post</a></p> {% endcomment %}
+
+    <a class="btn btn-primary" href="{% url 'post_edit' post.pk %}" role="button">Edit post</a>
+
+    <a class="btn btn-dark" href="{% url 'post_delete' post.pk %}" role="button">Delete post</a>
+
 {% endblock content %}
