@@ -1,12 +1,15 @@
 <!--templates/post_edit.html-->
 {% extends "base.html" %}
- 
+{% load crispy_forms_tags %}
 {% block content %}
     <h2>Edit post</h2>
  
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update">
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        {{ form|crispy }}
+        <p>
+        <button class="btn btn-success" type="submit">Update</button>
+        </p>
     </form>
 {% endblock content %}

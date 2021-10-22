@@ -2,6 +2,10 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post
 from django.urls import reverse_lazy
+import re
+from django.utils.timezone import datetime
+from django.http import HttpResponse
+from django.shortcuts import render
 
 
 class BlogHomePage(ListView):
@@ -31,3 +35,8 @@ class BlogDeleteViewPage(DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('home')
+
+
+class BlogAboutPage(ListView):
+    model = Post
+    template_name = 'about.html'
