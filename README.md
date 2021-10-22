@@ -1,4 +1,4 @@
-# crud
+# CRUD
 testing_crud
 
 Simple CRUD application using
