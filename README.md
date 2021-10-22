@@ -7,8 +7,10 @@ Simple CRUD application using
 
 -Django 3.2
 
--Git
+-PostgreSQL
 
 -Docker
 
--SQLite
+-Git
+
+
